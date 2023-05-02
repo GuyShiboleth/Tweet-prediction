@@ -17,13 +17,13 @@ def upload_ds():
 @st.cache_data
 def upload_label_encoders():
     senator_encoder = skpre.LabelEncoder()
-    senator_encoder.classes_ = np.load('models\Senator\senatorclasses.npy',allow_pickle=True)
+    senator_encoder.classes_ = np.load('models/Senator/senatorclasses.npy',allow_pickle=True)
     
     state_encoder = skpre.LabelEncoder()
-    state_encoder.classes_ = np.load('models\State\stateclasses.npy',allow_pickle=True)
+    state_encoder.classes_ = np.load('models/State/stateclasses.npy',allow_pickle=True)
     
     party_encoder = skpre.LabelEncoder()
-    party_encoder.classes_ = np.load('models\Party\partyclasses.npy',allow_pickle=True)
+    party_encoder.classes_ = np.load('models/Party/partyclasses.npy',allow_pickle=True)
 
     return [senator_encoder,state_encoder,party_encoder]
 
@@ -36,16 +36,16 @@ def upload_tokenizer():
 # upload the models
 @st.cache_resource
 def upload_models():
-    senator = keras.models.load_model("models\Senator")
-    state = keras.models.load_model('models\State')
-    party = keras.models.load_model("models\Party")
-    age = keras.models.load_model("models\Age")
+    senator = keras.models.load_model("models/Senator")
+    state = keras.models.load_model('models/State')
+    party = keras.models.load_model("models/Party")
+    age = keras.models.load_model("models/Age")
 
     return [senator,state,party,age]
 
 
 # Add link to dataset
-def create_html_link(link="https://drive.google.com/file/d/1GolL127hFgWpDx1V99mBnZwxdKXHEyUC/view?usp=share_link",text="link to dataset"):
+def create_html_link(link="https:/drive.google.com/file/d/1GolL127hFgWpDx1V99mBnZwxdKXHEyUC/view?usp=share_link",text="link to dataset"):
     html_link = f'<a href="{link}" target="_blank">{text}</a>'
     return html_link
 
