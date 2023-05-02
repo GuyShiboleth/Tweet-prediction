@@ -4,6 +4,7 @@ from view import *
 from controller import *
 import keras
 
+st.set_option('deprecation.showfileUploaderEncoding', False)
 
 #שימוש בשם אחר לעמוד ומתן אייקון לעמוד
 st.set_page_config(
