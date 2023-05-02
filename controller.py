@@ -29,7 +29,7 @@ def upload_label_encoders():
 
 @st.cache_data
 def upload_tokenizer():
-    with open(r'models\tokenizer.pickle', 'rb') as handle:
+    with open(r'models/tokenizer.pickle', 'rb') as handle:
         tokenizer = pickle.load(handle)
         return tokenizer
 
