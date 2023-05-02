@@ -3,7 +3,6 @@ streamlit
 pandas
 keras
 sklearn
-pickle
 tensorflow
 random
 view.py
