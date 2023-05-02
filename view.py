@@ -76,14 +76,14 @@ def display_task(option,df):
         st.markdown('<div class="explain"><span class="text">Enter a value between 0 and 263994. The website will chose the corresponding model from the dataset. Then the model will guess what politician wrote it and we\'ll see wether it is right or wrong. if the model is wrong it will show you information about the 2 politicians to see wether there are any similarities.</span></div>',unsafe_allow_html=True)
         st.markdown('the relevant indexes are the ones on the 1st column from the left')
         
-        tweet_num=st.number_input("tweetnum", min_value=0, max_value=263994, value=0, step=1, label_visibility="hidden")
+        tweet_num=st.number_input("tweetnum", min_value=0, max_value=249974, value=0, step=1, label_visibility="hidden")
         st.dataframe(df)
         
         return [df['tweet_text'][tweet_num],tweet_num]
     
 
     if option=="Pick a random senators tweet":
-        random_num = random.randint(0,263994)
+        random_num = random.randint(0,249974)
         tweet=df['tweet_text'][random_num]
         st.markdown(f"the number selected is {random_num} and the corresponding tweet is:")
         st.markdown(f"{tweet}")
