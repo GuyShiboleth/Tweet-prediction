@@ -10,5 +10,3 @@ view.py
 controller.py
 base_ds.xlsx
 models
-__pycache__
-.streamlit
