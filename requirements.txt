@@ -1,0 +1,14 @@
+numpy
+streamlit
+pandas
+keras
+sklearn
+pickle
+tensorflow
+random
+view.py
+controller.py
+base_ds.xlsx
+models
+__pycache__
+.streamlit
