@@ -4,7 +4,6 @@ pandas
 keras
 sklearn
 tensorflow
-random
 view.py
 controller.py
 base_ds.xlsx
