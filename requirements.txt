@@ -4,7 +4,3 @@ pandas
 keras
 sklearn
 tensorflow
-view.py
-controller.py
-base_ds.xlsx
-models
