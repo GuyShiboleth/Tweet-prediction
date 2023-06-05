@@ -74,6 +74,22 @@ def use_model(tweet,models,tokenizer,label_encoders):
     tokenized_corpus = tokenizer.texts_to_sequences(corpus)
     padded_corpus = pad_sequences(tokenized_corpus, maxlen=max_len)
         
+    senator_label_encoder=  label_encoders[0]
+    senator_model = models[0]
+
+    state_label_encoder=  label_encoders[1]
+    state_model = models[1]
+
+    party_model = models[2]
+    party_label_encoder = label_encoders[2]
+
+    age_model = models[3]
+    
+        
+    corpus = [tweet]
+    tokenized_corpus = tokenizer.texts_to_sequences(corpus)
+    padded_corpus = pad_sequences(tokenized_corpus, maxlen=max_len)
+        
     senator_prediction_array = senator_model.predict(padded_corpus)
     senator_prediction_index = np.argmax(senator_prediction_array, axis=-1)
     senator_prediction = senator_label_encoder.inverse_transform([senator_prediction_index])[0]
@@ -83,11 +99,9 @@ def use_model(tweet,models,tokenizer,label_encoders):
     state_prediction = state_label_encoder.inverse_transform([state_prediction_index])[0]
 
     party_prediction_array = party_model.predict(padded_corpus)
-    if party_prediction_array[0][0]>=0.5:
-        party_prediction = "Republican"
-    else:
-        party_prediction= "Democratic"
-
+    party_prediction_index= np.argmax(party_prediction_array, axis=-1)
+    party_prediction = party_label_encoder.inverse_transform([party_prediction_index])[0]
+    
     age_prediction = age_model.predict(padded_corpus)
 
 
