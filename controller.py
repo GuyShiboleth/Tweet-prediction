@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import keras
 import numpy as np
-import scikit-learn.preprocessing as skpre
+import scikit-learn as sklearn
+import sklearn.preprocessing as skpre
 import pickle
 from keras.utils import pad_sequences
 
