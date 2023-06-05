@@ -73,7 +73,7 @@ def display_task(option,df):
     
 
     if option=="Existing senate tweet":
-        st.markdown('<div class="explain"><span class="text">Enter a value between 0 and 249,973. The website will chose the corresponding model from the dataset. Then the model will guess what politician wrote it and we\'ll see wether it is right or wrong. If the model is wrong it will show you information about the 2 politicians to see wether there are any similarities.</span></div>',unsafe_allow_html=True)
+        st.markdown('<div class="explain"><span class="text">Enter a value between 0 and 249973. The website will chose the corresponding model from the dataset. Then the model will guess what politician wrote it and we\'ll see wether it is right or wrong. If the model is wrong it will show you information about the 2 politicians to see wether there are any similarities.</span></div>',unsafe_allow_html=True)
         st.markdown('the relevant indexes are the ones on the 1st column from the left')
         
         tweet_num=st.number_input("tweetnum", min_value=0, max_value=249974, value=0, step=1, label_visibility="hidden")
